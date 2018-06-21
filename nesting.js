@@ -50,7 +50,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+const employeeUpdater = () => {
+  for (i=0; i<employees.length; i++) {
+    if (employees[i].firstName === "Theo"){
+      employees.splice(i,1)
+    }
+    if (employees[i].firstName === "Lorie"){
+      employees[i].department = 'HR'
+    }
+  }
+  return employees
+}
 
 
 
@@ -68,7 +78,29 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+const removeDuplicates = () => {
+  for (i= workplaceAccidents.length; i >= 0; i--) {
+    workplaceAccidents.sort()
+    if (workplaceAccidents[i]===workplaceAccidents[i-1]){
+      workplaceAccidents.splice(i,1)
+    }
+  }
+  return workplaceAccidents
+}
+
+// const removeDuplicates = () => {
+//   const sorted = workplaceAccidents.sort()
+//   console.log(sorted)
+//   for (i = sorted.length; i >= 0; i--){
+//     for (e = sorted.length - 1; e >= 0; e--){
+//       if (sorted[i] === sorted[e]){
+//         workplaceAccidents.splice(e, 1)
+//       }
+//     }
+//   }
+//   return sorted
+// }
+console.log(removeDuplicates())
 
 
 
@@ -96,9 +128,11 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+
+var grumpyActivity = cat.catFriends[0].activities[1];
+console.log(grumpyActivity)
+var fluffy2ndFriend = cat.catFriends[1].name;
+console.log(fluffy2ndFriend)
 
 
 
@@ -137,8 +171,13 @@ var myCar = {
     2. Loop over the accidents array.
     3. Change atFaultForAccident from true to false.
 */
+console.log(myCar.accidents)
+function recordCleaner () {
+  myCar.accidents.forEach(val => val.atFaultForAccident = false)
+}
+recordCleaner()
+console.log(myCar.accidents)
 
-//Code Here
 
 
 
@@ -157,6 +196,19 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
-
+const looper = () => {
+  for (let i = 0; i < numsArr.length; i++) {
+    for (e = 0; e < numsArr[i].length; e++){
+      if (numsArr[i][e] % 2 === 0) {
+        numsArr[i][e] = "even"
+      }
+      else if(numsArr[i][e] % 2 === 1) {
+        numsArr[i][e] = "odd"
+      }
+    }
+  }
+  return numsArr
+}
+looper ()
+console.log(numsArr)
 

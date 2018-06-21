@@ -21,7 +21,7 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+const {color, make, model, year} = carDetails
 
 
 
@@ -34,7 +34,7 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+  const {firstName, lastName, title} = obj
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -53,7 +53,10 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+const totalPopulation = (obj) => {
+  const {utah, california, texas, arizona} = obj
+  return utah + california +texas + arizona
+}
 
 
 
@@ -67,7 +70,14 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+const ingredients = (obj) => {
+  let {carb, fat, protein} = obj
+  let newArr = []
+  for (let key in obj) {
+    newArr.push(obj[key])
+  }
+  return newArr
+}
 
 
 
@@ -85,8 +95,7 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
-
+const largeNumbers = ({first, second, third}) => Math.min(first, second, third)
 
 
 ////////// PROBLEM 6 //////////
@@ -97,6 +106,23 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
+const numberGroups = ({a, b, c}) => {
+  for (let key in {a, b, c}){
+    if ({a, b, c}[key].length == Math.max(a.length, b.length, c.length)) {
+      return {a, b, c}[key]
+    }
+  }
+}
+
+// Below contains test code
+const arr1 = [1,2,3,4,5]
+const arr2 = [1,2,3,4,5,6]
+const arr3 = [1,2,3,4,5,6,7,8,9]
+const numberObj = {
+  a:arr1,
+  b:arr2,
+  c:arr3
+}
+console.log(numberGroups(numberObj))
 
 
